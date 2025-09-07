@@ -45,6 +45,7 @@ faceImage.shape
 glassPNG = cv2.imread('glass.png',-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 ```
+
 <img width="883" height="508" alt="image" src="https://github.com/user-attachments/assets/54f7e089-d1d3-4795-9684-873efa9c849e" />
 
 ```
@@ -52,6 +53,7 @@ glassPNG = cv2.resize(glassPNG,(190,50))
 print("image Dimension ={}".format(glassPNG.shape))
 ```
 <img width="233" height="32" alt="image" src="https://github.com/user-attachments/assets/7616b70b-8a42-4334-9b3a-b1619837e305" />
+
 ```
 glassBGR = glassPNG[:,:,0:3]
 glassMask1 = glassPNG[:,:,3]
@@ -70,6 +72,7 @@ faceWithGlassesNaive[y1:y2, x1:x2] = glassResized
 plt.imshow(faceWithGlassesNaive[..., ::-1])
 ```
 <img width="403" height="428" alt="image" src="https://github.com/user-attachments/assets/98b08f39-2b21-4b86-ac7a-f3e0a7d0426f" />
+
 ```
 y1, y2 = 180, 255   
 x1, x2 = 70, 300   
@@ -99,12 +102,14 @@ plt.subplot(133); plt.imshow(faceWithGlassesArithmetic[..., ::-1]); plt.title("A
 plt.show()
 ```
 <img width="585" height="226" alt="image" src="https://github.com/user-attachments/assets/296e7868-62d4-46d6-857c-152516fb7e21" />
+
 ```
 faceWithGlassesArithmetic[180:255,70:300] = eyeRoiFinal
 plt.figure(figsize=[20,20])
 plt.subplot(121); plt.imshow(faceImage[:,:,::-1]); plt.title("Original Image")
 plt.subplot(122); plt.imshow(faceWithGlassesArithmetic[:,:,::-1]); plt.title("With Sunglass")
 ```
+
 <img width="548" height="370" alt="image" src="https://github.com/user-attachments/assets/9706f1ec-fcde-4f1d-a625-2431310115e5" />
 
 Feel free to fork, contribute, or customize this project for your creative needs!
