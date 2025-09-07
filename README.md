@@ -41,6 +41,7 @@ plt.imshow(faceImage[:,:,::-1]);plt.title("Face")
 faceImage.shape
 ```
 <img width="168" height="61" alt="image" src="https://github.com/user-attachments/assets/29963502-e5da-45fb-83d5-9870f3b4e64d" />
+
 ```
 glassPNG = cv2.imread('glass.png',-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
@@ -52,6 +53,7 @@ plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 glassPNG = cv2.resize(glassPNG,(190,50))
 print("image Dimension ={}".format(glassPNG.shape))
 ```
+
 <img width="233" height="32" alt="image" src="https://github.com/user-attachments/assets/7616b70b-8a42-4334-9b3a-b1619837e305" />
 
 ```
@@ -62,7 +64,9 @@ plt.figure(figsize=[15,15])
 plt.subplot(121);plt.imshow(glassBGR[:,:,::-1]);plt.title('Sunglass Color channels');
 plt.subplot(122);plt.imshow(glassMask1,cmap='gray');plt.title('Sunglass Alpha channel');
 ```
+
 <img width="544" height="105" alt="image" src="https://github.com/user-attachments/assets/0107c86d-630f-4f34-a3c7-af4c6cc5a2a6" />
+
 ```
 faceWithGlassesNaive = faceImage.copy()
 y1, y2 = 180, 255   
@@ -71,6 +75,7 @@ glassResized = cv2.resize(glassBGR, (x2 - x1, y2 - y1))
 faceWithGlassesNaive[y1:y2, x1:x2] = glassResized
 plt.imshow(faceWithGlassesNaive[..., ::-1])
 ```
+
 <img width="403" height="428" alt="image" src="https://github.com/user-attachments/assets/98b08f39-2b21-4b86-ac7a-f3e0a7d0426f" />
 
 ```
@@ -101,6 +106,7 @@ plt.subplot(132); plt.imshow(maskedGlass[..., ::-1].astype(np.uint8)); plt.title
 plt.subplot(133); plt.imshow(faceWithGlassesArithmetic[..., ::-1]); plt.title("Augmented Face with Sunglass")
 plt.show()
 ```
+
 <img width="585" height="226" alt="image" src="https://github.com/user-attachments/assets/296e7868-62d4-46d6-857c-152516fb7e21" />
 
 ```
